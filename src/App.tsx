@@ -11,11 +11,7 @@ function App() {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <Layout
-      style={{
-        height: '100vh'
-      }}
-    >
+    <Layout>
       <Sider
         collapsible
         collapsed={collapsed}
@@ -33,7 +29,7 @@ function App() {
           // margin: '24px 16px',
           // padding: 24,
           // minHeight: 280,
-          width: '100%',
+          width: '80%',
           height: '100%',
           position: 'relative',
           top: '0',
@@ -42,9 +38,9 @@ function App() {
           right: '0',
           // zIndex: '-1',
         }}>
-        <MapContainer center={[0, 0]} zoom={2} scrollWheelZoom={true} >
-          <MyMap />
-        </MapContainer>
+      <MapContainer center={[0, 0]} zoom={2} scrollWheelZoom={true} style={{ height: '100vh' }}>
+        <MyMap />
+      </MapContainer>
       </Content>
     </Layout>
   );
