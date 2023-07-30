@@ -1,3 +1,6 @@
+@import '~leaflet/dist/leaflet.css';
+
+/* bring in normalize.css styles */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +8,33 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  font-family: manrope, Arial, Tahoma, Verdana, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+.MuiPaper-root {
+  background-color: red;
+}
+
+.leaflet-container{
+  width: 100%;
+  height: 100%;
+}
+
+.App{
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  
 }
