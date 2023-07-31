@@ -9,7 +9,7 @@ export const MyMap: React.FC = () => {
   const map = useMap();
   const routes = useTypedSelector(state => state.routes);
 
-  if (!routes.selectRoute)
+  if (!routes.selectRouteId)
     return (
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -17,7 +17,7 @@ export const MyMap: React.FC = () => {
       />
     )
     
-  const selectRout = routes.routesArray[routes.selectRoute - 1];
+  const selectRout = routes.routesArray[routes.selectRouteId - 1];
 
   const bounds: LatLngBoundsExpression = [
     [selectRout.points[0].lat, selectRout.points[0].lng],
@@ -28,7 +28,7 @@ export const MyMap: React.FC = () => {
   map.flyToBounds(bounds, {
     maxZoom: map.getBoundsZoom(bounds),
     animate: true,
-    duration: 0.2,
+    duration: 0.35,
     padding: [150, 150]
   });
 
@@ -48,7 +48,9 @@ export const MyMap: React.FC = () => {
           </Marker>
         ))
       }
-      <MyPolyline />
+      {
+        routes.loadingPolylineError === null && !routes.loadingPolyline && <MyPolyline /> 
+      }
     </>
   )
 }

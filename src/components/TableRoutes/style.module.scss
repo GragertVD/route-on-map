@@ -1,0 +1,9 @@
+.row{
+  cursor: pointer;
+  background-color: white;
+
+  &.row_selected{
+    background-color: palegreen !important;
+  }
+
+}

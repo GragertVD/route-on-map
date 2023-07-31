@@ -8,7 +8,7 @@ export function* handleFetchPolyline() {
   try {
     const { routes } = yield select(state => state);
 
-    const selectRout = routes.routesArray[routes.selectRoute - 1];
+    const selectRout = routes.routesArray[routes.selectRouteId - 1];
 
     const data = yield call(fetchPolylineData, selectRout);;
     yield put(fetchPolylineSuccess(data.routes[0]));

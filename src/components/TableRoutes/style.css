@@ -1,0 +1,5 @@
+@media (any-hover: hover) {
+  tr.ant-table-row>td.ant-table-cell-row-hover {
+    background-color: rgb(208, 255, 208) !important;
+  }
+}

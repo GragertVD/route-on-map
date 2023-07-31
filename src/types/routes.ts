@@ -31,9 +31,9 @@ export type RoutesAction = SelectRouteAction | FetchPolylineAction | FetchPolyli
 export interface Routes {
   polyline: any,
   routesArray: Route[],
-  selectRoute: number,
+  selectRouteId: number,
   loadingPolyline: boolean,
-  error: string | null,
+  loadingPolylineError: string | null,
 }
 
 export interface Route {

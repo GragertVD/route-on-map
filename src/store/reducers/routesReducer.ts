@@ -7,19 +7,19 @@ const initState: Routes = {
     { id: 2, points: [{ lat: 59.82934196, lng: 30.42423701 }, { lat: 59.82761295, lng: 30.41705607 }, { lat: 59.84660399, lng: 30.29496392 }] },
     { id: 3, points: [{ lat: 59.83567701, lng: 30.38064206 }, { lat: 59.84660399, lng: 30.29496392 }, { lat: 59.82761295, lng: 30.41705607 }] }
   ],
-  selectRoute: 0,
+  selectRouteId: 0,
   polyline: null,
   loadingPolyline: false,
-  error: null,
+  loadingPolylineError: null,
 }
 
 export const routesReducer = (state: Routes = initState, action: RoutesAction): Routes => {
   let tempState = { ...state };
-  tempState.error = null;
+  tempState.loadingPolylineError = null;
 
   switch (action.type) {
     case RoutesActionTypes.SELECT_ROUTE:
-      tempState.selectRoute = action.payload;
+      tempState.selectRouteId = action.payload;
       return tempState;
 
     case RoutesActionTypes.FETCH_POLYLINE:
@@ -33,7 +33,7 @@ export const routesReducer = (state: Routes = initState, action: RoutesAction): 
 
     case RoutesActionTypes.FETCH_POLYLINE_ERROR:
       tempState.loadingPolyline = false;
-      tempState.error = action.payload;
+      tempState.loadingPolylineError = action.payload;
       return tempState;
 
     default:
