@@ -4,11 +4,10 @@ export async function fetchPolylineData(props: Route): Promise<any> {
   try {
     let URL = `https://router.project-osrm.org/route/v1/driving/`;
 
-    
     for (const point of props.points) {
       URL += `${point.lng},${point.lat};`;
     }
-    
+
     URL = URL.slice(0, -1) + '?overview=full&geometries=geojson';
 
     const response = await fetch(URL);

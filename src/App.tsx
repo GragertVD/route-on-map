@@ -8,9 +8,10 @@ import { useResize } from './hooks/useResize';
 
 function App() {
   const { Sider, Content } = Layout;
+
   const [collapsed, setCollapsed] = useState(false);
   const screen = useResize();
-  
+
   return (
     <Layout
       style={{
@@ -21,14 +22,14 @@ function App() {
         collapsible
         collapsed={collapsed}
         onCollapse={(value) => setCollapsed(value)}
-        width={screen.isScreenMobileL? '400px' : '300px'}
+        width={screen.isScreenMobileL ? '400px' : '300px'}
         style={{
           overflowX: 'hidden',
           overflowY: 'auto',
           background: 'white',
-          minWidth: '300px !important'
+          minWidth: '300px'
         }}
-        
+
       >
         <TableRoutes />
       </Sider>
