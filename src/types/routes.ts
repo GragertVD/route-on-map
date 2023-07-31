@@ -1,3 +1,4 @@
+import { OSRM_Route } from "./OSRM";
 
 export enum RoutesActionTypes {
   SELECT_ROUTE = "SELECT_ROUTE",
@@ -17,7 +18,7 @@ interface FetchPolylineAction {
 
 interface FetchPolylineSuccessAction {
   type: RoutesActionTypes.FETCH_POLYLINE_SUCCESS;
-  payload: any;
+  payload: OSRM_Route | null;
 }
 
 interface FetchPolylineErrorAction {
@@ -29,7 +30,7 @@ export type RoutesAction = SelectRouteAction | FetchPolylineAction | FetchPolyli
 
 
 export interface Routes {
-  polyline: any,
+  polyline: OSRM_Route | null,
   routesArray: Route[],
   selectRouteId: number,
   loadingPolyline: boolean,

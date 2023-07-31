@@ -5,6 +5,7 @@ import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { Table } from 'antd';
 import { fetchPolyline, selectRoute } from "../../store/action/actionCreators";
 
+//структура объекта для вывода в таблицу
 interface DataType {
   key: number;
   id: number;
@@ -19,6 +20,7 @@ export const TableRoutes: React.FC = () => {
   const routes = useTypedSelector(state => state.routes);
   const dispatch = useDispatch();
 
+  //Заполняем данные для таблици
   const data: DataType[] = [];
   for (let route of routes.routesArray) {
     data.push({

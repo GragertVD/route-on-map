@@ -10,6 +10,7 @@ function App() {
   const { Sider, Content } = Layout;
 
   const [collapsed, setCollapsed] = useState(false);
+  //хук для определения ширины экрана
   const screen = useResize();
 
   return (

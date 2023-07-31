@@ -1,25 +1,25 @@
 
 export interface OSRM_RequestData {
   code: string;
-  routes: Route[];
+  routes: OSRM_Route[];
   waypoints: Waypoint[];
 }
 
-export interface Route {
-  geometry: Geometry;
-  legs: Leg[];
+export interface OSRM_Route {
+  geometry: OSRM_Geometry;
+  legs: OSRM_Leg[];
   weight_name: string;
   weight: number;
   duration: number;
   distance: number;
 }
 
-export interface Geometry {
-  coordinates: [number, number];
+export interface OSRM_Geometry {
+  coordinates: [number, number][];
   type: string;
 }
 
-export interface Leg {
+export interface OSRM_Leg {
   steps: unknown[];
   summary: string;
   weight: number;

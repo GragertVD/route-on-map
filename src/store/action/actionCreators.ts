@@ -1,3 +1,4 @@
+import { OSRM_Route } from "../../types/OSRM";
 import { RoutesActionTypes } from "../../types/routes";
 
 export const selectRoute = (idRoute: number) => ({
@@ -9,7 +10,7 @@ export const fetchPolyline = () => ({
   type: RoutesActionTypes.FETCH_POLYLINE,
 });
 
-export const fetchPolylineSuccess = (polylineData: any) => ({
+export const fetchPolylineSuccess = (polylineData: OSRM_Route) => ({
   type: RoutesActionTypes.FETCH_POLYLINE_SUCCESS,
   payload: polylineData
 });

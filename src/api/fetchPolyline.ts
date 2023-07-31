@@ -1,6 +1,7 @@
+import { OSRM_RequestData } from "../types/OSRM";
 import { Route } from "../types/routes";
 
-export async function fetchPolylineData(props: Route): Promise<any> {
+export async function fetchPolylineData(props: Route): Promise<OSRM_RequestData> {
   try {
     let URL = `https://router.project-osrm.org/route/v1/driving/`;
 

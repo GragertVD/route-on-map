@@ -29,6 +29,7 @@ export const routesReducer = (state: Routes = initState, action: RoutesAction): 
     case RoutesActionTypes.FETCH_POLYLINE_SUCCESS:
       tempState.loadingPolyline = false;
       tempState.polyline = action.payload;
+
       return tempState;
 
     case RoutesActionTypes.FETCH_POLYLINE_ERROR:
